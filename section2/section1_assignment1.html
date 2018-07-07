@@ -1,0 +1,43 @@
+<!-- Title not changes for me -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Section 2 - VueJs</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="vue-el">
+    <p>
+      VueJs {{ name }} {{ age }}
+    </p>
+    <p>
+      Age * 3 => {{ tribleTheAge() }}
+    </p>
+    <p>
+      Random Number => {‌{ randomNumber() }}
+    </p>
+    <p>
+      <img v-bind:src='img'/>
+    </p>
+  </div>
+</body>
+
+<script>
+  new Vue({
+    el: '#vue-el',
+    data: {
+      name: 'Ponnusamy',
+      age: 28,
+      img: "https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg"
+    },
+    methods: {
+      tribleTheAge: function() {
+        return this.age * 3;
+      },
+      randomNumber: function() {
+        return Math.random();
+      }
+    }
+  })
+</script>
+</html>
