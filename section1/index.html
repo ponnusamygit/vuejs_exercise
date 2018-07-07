@@ -1,0 +1,23 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Section 1 - VueJs</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="vue-el">
+    <p>
+      {{ title }}      
+    </p>
+  </div>
+</body>
+
+<script>
+  new Vue({
+    el: '#vue-el',
+    data: {
+      title: 'This is Section 1 demo'
+    }
+  })
+</script>
+</html>
