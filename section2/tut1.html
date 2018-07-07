@@ -1,0 +1,33 @@
+<!-- Title not changes for me -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Section 1 - VueJs</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="vue-el">
+    <p>
+      {{ title }}      
+    </p>
+    <p>
+      {{ setTitle() }} <= It is comming from function call. This will also updates title above.
+    </p>
+  </div>
+</body>
+
+<script>
+  new Vue({
+    el: '#vue-el',
+    data: {
+      title: 'This is Section 1 demo'
+    },
+    methods: {
+      setTitle: function() {
+        self.title = "New Title";
+        return self.title;
+      }
+    }
+  })
+</script>
+</html>
