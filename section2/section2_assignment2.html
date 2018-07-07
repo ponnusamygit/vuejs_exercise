@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Section 2 - VueJs - Assignment 2</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="vue-el">
+    <!-- Show alert whenever hit the button -->
+    <button v-on:click='alertMe'>
+      Increase
+    </button>
+
+    <!-- store and update values from input, using keydown -->
+    <!-- adjust the value only on hit enter -->
+    <div>
+      <input type="text" v-on:keydown.enter='updateValue'>
+      Value : {{ value }}
+    </div>
+
+  </div>
+</body>
+
+<script>
+  new Vue({
+    el: '#vue-el',
+    data: {
+      value: 'No key press'
+    },
+    methods: {
+      alertMe: function(e) {
+        alert("VueJs Pretty Cool! ah!")
+      },
+      updateValue: function(e) {
+        this.value = e.target.value;
+      }
+    }
+  })
+</script>
+</html>

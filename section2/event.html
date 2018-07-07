@@ -1,0 +1,47 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Section 2 - VueJs</title>
+  <script src="../vue.js"></script>
+</head>
+<body>
+  <div id="vue-el">
+    <div>
+      <h1>Count : {{ counter }} </h1>
+    </div>
+    <button v-on:click='increase(3)'>
+      Increase
+    </button>
+
+    <h1 v-on:mousemove='updatePosition'>
+      Co-ordinates {{ x }} / {{ y }}
+      - <span v-on:mousemove.stop=''> No Event </span>
+    </h1>
+
+    <input type="text" v-on:keyup.enter.space='alertMe'>
+  </div>
+</body>
+
+<script>
+  new Vue({
+    el: '#vue-el',
+    data: {
+      counter: 0,
+      x: 0,
+      y: 0
+    },
+    methods: {
+      increase: function(step) {
+        this.counter += step
+      },
+      updatePosition: function (e) {
+        this.x = e.clientX
+        this.y = e.clientY
+      },
+      alertMe: function(e) {
+        alert(e.target.value)
+      }
+    }
+  })
+</script>
+</html>
